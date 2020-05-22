@@ -33,7 +33,8 @@ class LoginFragment : Fragment() {
         when(it){
             btn_login -> {
                 val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to DashBoardFragment")
-//                navigate(R.id.action_loginFragment_to_forgotPasswordFragment,bundle)
+                navigate(R.id.action_loginFragment_to_dashBoardActivity,bundle)
+                activity?.finish()
             }
             tv_forgot_password ->{
                 val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to ForgotPassword")
@@ -50,6 +51,5 @@ class LoginFragment : Fragment() {
     private fun navigate(resId: Int, bundle: Bundle) {
         view?.let { Navigation.findNavController(it).navigate(resId,bundle) }
     }
-
 
 }
