@@ -32,7 +32,7 @@ class LoginFragment : Fragment() {
     private val onClick = View.OnClickListener{
         when(it){
             btn_login -> {
-                val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to DashBoardFragment")
+                val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to DashBoardActivity")
                 navigate(R.id.action_loginFragment_to_dashBoardActivity,bundle)
                 activity?.finish()
             }
@@ -41,7 +41,7 @@ class LoginFragment : Fragment() {
                 navigate(R.id.action_loginFragment_to_forgotPasswordFragment,bundle)
             }
             tv_signup -> {
-                val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to DashBoardFragment")
+                val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to SignUpFragment")
                 navigate(R.id.action_loginFragment_to_signUpFragment,bundle)
             }
 
