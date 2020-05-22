@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -25,30 +24,44 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        listOf<View>(btn_login, tv_forgot_password, tv_signup).forEach { it.setOnClickListener(onClick) }
+        listOf<View>(btn_login, tv_forgot_password, tv_signup).forEach {
+            it.setOnClickListener(
+                onClick
+            )
+        }
 
     }
 
-    private val onClick = View.OnClickListener{
-        when(it){
+    private val onClick = View.OnClickListener {
+        when (it) {
             btn_login -> {
-                val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to DashBoardActivity")
-                navigate(R.id.action_loginFragment_to_dashBoardActivity,bundle)
+                val bundle = bundleOf(
+                    "from" to javaClass.simpleName,
+                    "message" to "LoginFragment to DashBoardActivity"
+                )
+                navigate(R.id.action_loginFragment_to_dashBoardActivity, bundle)
+                activity?.finish()
             }
-            tv_forgot_password ->{
-                val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to ForgotPassword")
-                navigate(R.id.action_loginFragment_to_forgotPasswordFragment,bundle)
+            tv_forgot_password -> {
+                val bundle = bundleOf(
+                    "from" to javaClass.simpleName,
+                    "message" to "LoginFragment to ForgotPassword"
+                )
+                navigate(R.id.action_loginFragment_to_forgotPasswordFragment, bundle)
             }
             tv_signup -> {
-                val bundle = bundleOf("from" to javaClass.simpleName,"message" to "LoginFragment to SignUpFragment")
-                navigate(R.id.action_loginFragment_to_signUpFragment,bundle)
+                val bundle = bundleOf(
+                    "from" to javaClass.simpleName,
+                    "message" to "LoginFragment to SignUpFragment"
+                )
+                navigate(R.id.action_loginFragment_to_signUpFragment, bundle)
             }
 
         }
     }
 
     private fun navigate(resId: Int, bundle: Bundle) {
-        view?.let { Navigation.findNavController(it).navigate(resId,bundle) }
+        view?.let { Navigation.findNavController(it).navigate(resId, bundle) }
     }
 
 }
