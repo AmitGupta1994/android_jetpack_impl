@@ -29,5 +29,9 @@ class DashBoardActivity : AppCompatActivity() {
             finish()
         }
 
+        // implementing action bar changes
+        val navController = Navigation.findNavController(this,R.id.nav_host_fragment)
+
+        NavigationUI.setupActionBarWithNavController(this,navController)
     }
 }
