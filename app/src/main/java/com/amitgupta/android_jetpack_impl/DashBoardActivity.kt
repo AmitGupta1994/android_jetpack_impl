@@ -15,23 +15,29 @@ class DashBoardActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_dashboard)
 
-        Toast.makeText(this,intent.getStringExtra("message") as String, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, intent.getStringExtra("message") as String, Toast.LENGTH_SHORT).show()
 
         //set bottom navigation view
-        NavigationUI.setupWithNavController(bottom_navigation_view,Navigation.findNavController(this,R.id.nav_host_fragment))
+        NavigationUI.setupWithNavController(
+            bottom_navigation_view,
+            Navigation.findNavController(this, R.id.nav_host_fragment)
+        )
 
         //logout
         logout.setOnClickListener {
             startActivity(
-                Intent(this,
-                LoginActivity::class.java)
+                Intent(
+                    this,
+                    LoginActivity::class.java
+                )
             )
             finish()
         }
 
         // implementing action bar changes
-        val navController = Navigation.findNavController(this,R.id.nav_host_fragment)
+        val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
-        NavigationUI.setupActionBarWithNavController(this,navController)
+        if (actionBar != null)
+            NavigationUI.setupActionBarWithNavController(this, navController)
     }
 }

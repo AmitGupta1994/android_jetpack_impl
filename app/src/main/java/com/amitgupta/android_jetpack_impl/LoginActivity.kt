@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 
-class LoginActivity : AppCompatActivity(){
+class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,8 +13,9 @@ class LoginActivity : AppCompatActivity(){
         setContentView(R.layout.activity_login)
 
         // implementing action bar changes
-        val navController = Navigation.findNavController(this,R.id.nav_host_fragment)
+        val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
-        NavigationUI.setupActionBarWithNavController(this,navController)
+        if (actionBar != null)
+            NavigationUI.setupActionBarWithNavController(this, navController)
     }
 }
