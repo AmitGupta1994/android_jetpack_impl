@@ -1,5 +1,6 @@
 package com.amitgupta.android_jetpack_impl
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,15 @@ class DashBoardActivity : AppCompatActivity() {
 
         //set bottom navigation view
         NavigationUI.setupWithNavController(bottom_navigation_view,Navigation.findNavController(this,R.id.nav_host_fragment))
+
+        //logout
+        logout.setOnClickListener {
+            startActivity(
+                Intent(this,
+                LoginActivity::class.java)
+            )
+            finish()
+        }
 
     }
 }
