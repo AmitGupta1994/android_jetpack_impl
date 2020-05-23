@@ -78,18 +78,6 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="homeFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-617" />
-                            <option name="y" value="-576" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="loginFragment">
                     <value>
                       <LayoutPositions>
@@ -121,25 +109,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="profileFragment">
+                  <entry key="profileFragment2">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-598" />
-                            <option name="y" value="-250" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="settingsFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-585" />
-                            <option name="y" value="74" />
+                            <option name="x" value="-649" />
+                            <option name="y" value="-705" />
                           </Point>
                         </option>
                       </LayoutPositions>

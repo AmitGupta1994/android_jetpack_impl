@@ -22,7 +22,11 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.amitgupta.android_jetpack_impl.fragment.SignUpFragment"
-        android:label="SignUpFragment" />
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.amitgupta.android_jetpack_impl.fragment.ForgotPasswordFragment"
@@ -31,4 +35,8 @@
         android:id="@+id/dashBoardActivity"
         android:name="com.amitgupta.android_jetpack_impl.DashBoardActivity"
         android:label="DashBoardActivity" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.amitgupta.android_jetpack_impl.fragment.ProfileFragment"
+        android:label="ProfileFragment" />
 </navigation>
