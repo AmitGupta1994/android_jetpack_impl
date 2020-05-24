@@ -25,7 +25,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Toast.makeText(activity,arguments?.get("message") as String, Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, arguments?.get("message") as String, Toast.LENGTH_SHORT).show()
 
         signup.setOnClickListener {
             navigate(R.id.action_signUpFragment_to_profileFragment)
