@@ -16,4 +16,18 @@ class MoviesViewModel {
             .setBoundaryCallback(boundaryCallback)
             .build()
     }
+
+    val loadingStatus : LiveData<LoadingStatus> = Transformations.switchMap(
+        boundaryCallback.boundaryState, {onBoundaryItemLoaded(it.itemData, it.direction)})
+
+    private fun onBoundaryItemLoaded(itemDate: Date, direction: Direction) : LiveData<LoadingStatus> {
+        Timber.d("onBoundaryItemLoaded %s %s ", itemDate, direction)
+
+        val fetchDate = when (direction) {
+            Direction.BOTTOM -> Util.addDay(itemDate, -1)
+            Direction.TOP -> Util.addDay(itemDate, +1)
+            else -> itemDate
+        }
+        return movieRepository.fetchMore(fetchDate)
+    }
 }
